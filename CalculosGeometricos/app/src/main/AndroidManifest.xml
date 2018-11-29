@@ -19,7 +19,8 @@
         <activity android:name=".MenuActivity" />
         <activity android:name=".InfoActivity" />
         <activity android:name=".HistoricoActivity" />
-        <activity android:name=".ListFiguras"></activity>
+        <activity android:name=".ListFiguras" />
+        <activity android:name=".ListFigura" />
     </application>
 
 </manifest>
