@@ -29,15 +29,9 @@ public class ListFiguras extends ListActivity {
             try{
                 SQLiteOpenHelper figurasDatabaseHelper = new CalculoDataBaseHelper(this);
                 db = figurasDatabaseHelper.getReadableDatabase();
-
-                /*
-                cursor = db.query("figuras",
-                        new String[]{"_id", "nome"},
-                        null, null, null, null,null);
-                        */
                 cursor = db.query("figuras",//Tabela
                         new String[]{ "_id","nome"},//Coluna
-                        "nome = ?", //where ou selection
+                        "tipo = ?", //where ou selection
                         new String[]{"Bidimensional"},//substitui o ? no where
                         null,null,null,null);//restante dos parametros null
 
@@ -58,17 +52,11 @@ public class ListFiguras extends ListActivity {
                 SQLiteOpenHelper figurasDatabaseHelper = new CalculoDataBaseHelper(this);
                 db = figurasDatabaseHelper.getReadableDatabase();
 
-                cursor = db.query("figuras",
-                        new String[]{"_id", "nome"},
-                        null, null, null, null,null);
-
-                /*
                 cursor = db.query("figuras",//Tabela
                         new String[]{ "_id","nome"},//Coluna
-                        "nome = ?", //where ou selection
-                        new String[]{"Bidimensional"},//substitui o ? no where
+                        "tipo = ?", //where ou selection
+                        new String[]{"Tridimensional"},//substitui o ? no where
                         null,null,null,null);//restante dos parametros null
-                 */
 
                 CursorAdapter listAdapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_1,
                         cursor,

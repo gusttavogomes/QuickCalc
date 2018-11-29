@@ -25,11 +25,11 @@ public class CalculoDataBaseHelper extends SQLiteOpenHelper {
                 "_idFigura INTEGER, " +
                 "FOREIGN KEY(_idFigura) REFERENCES _id(figuras));");
 
-        insertFiguras(db, "Quadrado", "bidimensional");
-        insertFiguras(db, "Retangulo", "bidimensional");
-        insertFiguras(db, "Trapezio", "bidimensional");
-        insertFiguras(db, "Triangulo", "bidimensional");
-        insertFiguras(db, "Circulo", "bidimensional");
+        insertFiguras(db, "Quadrado", "Bidimensional");
+        insertFiguras(db, "Retangulo", "Bidimensional");
+        insertFiguras(db, "Trapezio", "Bidimensional");
+        insertFiguras(db, "Triangulo", "Bidimensional");
+        insertFiguras(db, "Circulo", "Bidimensional");
 
         insertFiguras(db, "Cubo", "Tridimensional");
         insertFiguras(db, "Prisma retangular", "Tridimensional");
