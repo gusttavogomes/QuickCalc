@@ -22,24 +22,48 @@ public class ListFiguras extends ListActivity {
         super.onCreate(savedInstanceState);
         ListView listFiguras = getListView();
 
-        try{
-            SQLiteOpenHelper figurasDatabaseHelper = new CalculoDataBaseHelper(this);
-            db = figurasDatabaseHelper.getReadableDatabase();
+        String plano = getIntent().getStringExtra(MenuActivity.PLANO);
+        if(plano.equals("bidimensional")){
+            try{
+                SQLiteOpenHelper figurasDatabaseHelper = new CalculoDataBaseHelper(this);
+                db = figurasDatabaseHelper.getReadableDatabase();
 
-            cursor = db.query("figuras",
-                    new String[]{"_id", "nome"},
-                    null, null, null, null,null);
+                cursor = db.query("figuras",
+                        new String[]{"_id", "nome"},
+                        null, null, null, null,null);
 
-            CursorAdapter listAdapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_1,
-                    cursor,
-                    new String[]{"nome"},
-                    new int[]{android.R.id.text1},
-                    0);
+                CursorAdapter listAdapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_1,
+                        cursor,
+                        new String[]{"nome"},
+                        new int[]{android.R.id.text1},
+                        0);
 
-            listFiguras.setAdapter(listAdapter);
-        }catch (SQLiteException e) {
-            Toast toast = Toast.makeText(this, "DB indisponível", Toast.LENGTH_LONG);
-            toast.show();
+                listFiguras.setAdapter(listAdapter);
+            }catch (SQLiteException e) {
+                Toast toast = Toast.makeText(this, "DB indisponível", Toast.LENGTH_LONG);
+                toast.show();
+            }
+        }
+        else if (plano.equals("tridimensional")){
+            try{
+                SQLiteOpenHelper figurasDatabaseHelper = new CalculoDataBaseHelper(this);
+                db = figurasDatabaseHelper.getReadableDatabase();
+
+                cursor = db.query("figuras",
+                        new String[]{"_id", "nome"},
+                        null, null, null, null,null);
+
+                CursorAdapter listAdapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_1,
+                        cursor,
+                        new String[]{"nome"},
+                        new int[]{android.R.id.text1},
+                        0);
+
+                listFiguras.setAdapter(listAdapter);
+            }catch (SQLiteException e) {
+                Toast toast = Toast.makeText(this, "DB indisponível", Toast.LENGTH_LONG);
+                toast.show();
+            }
         }
     }
 
