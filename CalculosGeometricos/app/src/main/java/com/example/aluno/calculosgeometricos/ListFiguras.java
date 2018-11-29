@@ -23,14 +23,23 @@ public class ListFiguras extends ListActivity {
         ListView listFiguras = getListView();
 
         String plano = getIntent().getStringExtra(MenuActivity.PLANO);
+
+
         if(plano.equals("bidimensional")){
             try{
                 SQLiteOpenHelper figurasDatabaseHelper = new CalculoDataBaseHelper(this);
                 db = figurasDatabaseHelper.getReadableDatabase();
 
+                /*
                 cursor = db.query("figuras",
                         new String[]{"_id", "nome"},
                         null, null, null, null,null);
+                        */
+                cursor = db.query("figuras",//Tabela
+                        new String[]{ "_id","nome"},//Coluna
+                        "nome = ?", //where ou selection
+                        new String[]{"Bidimensional"},//substitui o ? no where
+                        null,null,null,null);//restante dos parametros null
 
                 CursorAdapter listAdapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_1,
                         cursor,
@@ -53,6 +62,14 @@ public class ListFiguras extends ListActivity {
                         new String[]{"_id", "nome"},
                         null, null, null, null,null);
 
+                /*
+                cursor = db.query("figuras",//Tabela
+                        new String[]{ "_id","nome"},//Coluna
+                        "nome = ?", //where ou selection
+                        new String[]{"Bidimensional"},//substitui o ? no where
+                        null,null,null,null);//restante dos parametros null
+                 */
+
                 CursorAdapter listAdapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_1,
                         cursor,
                         new String[]{"nome"},
@@ -65,6 +82,7 @@ public class ListFiguras extends ListActivity {
                 toast.show();
             }
         }
+        //
     }
 
     @Override
@@ -77,7 +95,7 @@ public class ListFiguras extends ListActivity {
     @Override
     public void onListItemClick(ListView listView, View itemView, int position, long id) {
         Intent i = new Intent(this, ListFigura.class);
-        i.putExtra(ListFigura.EXTRA_NUMEROCURSO, (int) id);
+        i.putExtra(ListFigura.EXTRA_NUMERO, (int) id);
         startActivity(i);
     }
 }

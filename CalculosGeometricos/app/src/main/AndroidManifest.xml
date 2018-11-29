@@ -17,10 +17,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".MenuActivity" />
-        <activity android:name=".InfoActivity" />
-        <activity android:name=".HistoricoActivity" />
-        <activity android:name=".ListFiguras" />
-        <activity android:name=".ListFigura" />
+        <activity android:name=".InfoActivity"
+            android:parentActivityName=".HomeActivity"/>
+        <activity android:name=".HistoricoActivity"
+            android:parentActivityName=".HomeActivity"/>
+        <activity android:name=".ListFiguras"
+            android:parentActivityName=".MenuActivity"/>
+        <activity android:name=".ListFigura"
+            android:parentActivityName=".ListFiguras"/>
     </application>
 
 </manifest>

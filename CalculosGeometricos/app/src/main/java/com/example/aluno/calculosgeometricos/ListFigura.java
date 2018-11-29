@@ -11,14 +11,14 @@ import android.widget.Toast;
 
 public class ListFigura extends Activity {
 
-    public static final String EXTRA_NUMEROCURSO = "numerofigura";
+    public static final String EXTRA_NUMERO = "numerofigura";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_figura);
 
-        int numeroFigura = (Integer) getIntent().getExtras().get(EXTRA_NUMEROCURSO);
+        int numeroFigura = (Integer) getIntent().getExtras().get(EXTRA_NUMERO);
 
         try{
             SQLiteOpenHelper cursosDatabaseHelper = new CalculoDataBaseHelper(this);
