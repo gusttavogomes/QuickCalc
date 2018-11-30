@@ -14,23 +14,26 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
 public class ListFiguras extends ListActivity {
+    public static final String NOMEFIGURA = "com.example.aluno.calculosgeometricos.NOMEFIGURA" ;
     private SQLiteDatabase db;
     private Cursor cursor;
+    private String plano;
+    private String valorNome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ListView listFiguras = getListView();
 
-        String plano = getIntent().getStringExtra(MenuActivity.PLANO);
-
+        plano = getIntent().getStringExtra(MenuActivity.PLANO);
 
         if(plano.equals("bidimensional")){
             try{
                 SQLiteOpenHelper figurasDatabaseHelper = new CalculoDataBaseHelper(this);
                 db = figurasDatabaseHelper.getReadableDatabase();
+
                 cursor = db.query("figuras",//Tabela
-                        new String[]{ "_id","nome"},//Coluna
+                        new String[]{ "_id", "nome", "tipo", "nomeEng"},//Coluna
                         "tipo = ?", //where ou selection
                         new String[]{"Bidimensional"},//substitui o ? no where
                         null,null,null,null);//restante dos parametros null
@@ -53,7 +56,7 @@ public class ListFiguras extends ListActivity {
                 db = figurasDatabaseHelper.getReadableDatabase();
 
                 cursor = db.query("figuras",//Tabela
-                        new String[]{ "_id","nome"},//Coluna
+                        new String[]{ "_id", "nome", "tipo", "nomeEng"},//Coluna
                         "tipo = ?", //where ou selection
                         new String[]{"Tridimensional"},//substitui o ? no where
                         null,null,null,null);//restante dos parametros null
@@ -70,7 +73,6 @@ public class ListFiguras extends ListActivity {
                 toast.show();
             }
         }
-        //
     }
 
     @Override
@@ -82,8 +84,37 @@ public class ListFiguras extends ListActivity {
 
     @Override
     public void onListItemClick(ListView listView, View itemView, int position, long id) {
-        Intent i = new Intent(this, ListFigura.class);
-        i.putExtra(ListFigura.EXTRA_NUMERO, (int) id);
-        startActivity(i);
+        int identificador = (int) id;
+
+        try{
+            SQLiteOpenHelper figurasDatabaseHelper = new CalculoDataBaseHelper(this);
+            db = figurasDatabaseHelper.getReadableDatabase();
+
+            cursor = db.query("figuras",
+                    new String[] {"nome", "tipo", "nomeEng"},
+                    "_id = ?",
+                    new String[] {Integer.toString(identificador)},
+                    null, null, null);
+
+            if(cursor.moveToFirst()){
+                valorNome = cursor.getString(0);
+            }
+            cursor.close();
+            db.close();
+        }catch (SQLiteException e) {
+            Toast toast = Toast.makeText(this, "DB indisponível", Toast.LENGTH_LONG);
+            toast.show();
+        }
+
+        if (valorNome.equals("Quadrado")){
+            Intent intent = new Intent(this, UmCampoActivity.class);
+            intent.putExtra(NOMEFIGURA, valorNome);
+            startActivity(intent);
+        }
+        else if (valorNome.equals("Retangulo")){
+            Intent intent = new Intent(this, UmCampoActivity.class);
+            intent.putExtra(NOMEFIGURA, valorNome);
+            startActivity(intent);
+        }
     }
 }

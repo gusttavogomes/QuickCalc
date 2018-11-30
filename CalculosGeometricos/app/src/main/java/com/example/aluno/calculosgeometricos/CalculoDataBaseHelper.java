@@ -16,7 +16,8 @@ public class CalculoDataBaseHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE figuras (" +
                 "_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "nome TEXT, " +
-                "tipo TEXT);");
+                "tipo TEXT," +
+                "nomeEng);");
 
         db.execSQL("CREATE TABLE historicos (_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "nome TEXT, " +
@@ -25,17 +26,15 @@ public class CalculoDataBaseHelper extends SQLiteOpenHelper {
                 "_idFigura INTEGER, " +
                 "FOREIGN KEY(_idFigura) REFERENCES _id(figuras));");
 
-        insertFiguras(db, "Quadrado", "Bidimensional");
-        insertFiguras(db, "Retangulo", "Bidimensional");
-        insertFiguras(db, "Trapezio", "Bidimensional");
-        insertFiguras(db, "Triangulo", "Bidimensional");
-        insertFiguras(db, "Circulo", "Bidimensional");
+        insertFiguras(db, "Quadrado", "Bidimensional", "");
+        insertFiguras(db, "Retangulo", "Bidimensional", "");
+        insertFiguras(db, "Triangulo", "Bidimensional", "");
+        insertFiguras(db, "Circulo", "Bidimensional", "");
 
-        insertFiguras(db, "Cubo", "Tridimensional");
-        insertFiguras(db, "Prisma retangular", "Tridimensional");
-        insertFiguras(db, "Prisma Trapezoidal", "Tridimensional");
-        insertFiguras(db, "Prisma Triangular", "Tridimensional");
-        insertFiguras(db, "Esfera", "Tridimensional");
+        insertFiguras(db, "Cubo", "Tridimensional", "");
+        insertFiguras(db, "Prisma retangular", "Tridimensional", "");
+        insertFiguras(db, "Prisma Triangular", "Tridimensional", "");
+        insertFiguras(db, "Esfera", "Tridimensional", "");
     }
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     }
@@ -49,10 +48,11 @@ public class CalculoDataBaseHelper extends SQLiteOpenHelper {
         db.insert("historicos", null, valoresHistorico);
     }
 
-    private static void insertFiguras(SQLiteDatabase db, String nome, String tipo) {
+    private static void insertFiguras(SQLiteDatabase db, String nome, String tipo, String nomeEng) {
         ContentValues valoresFiguras = new ContentValues();
         valoresFiguras.put("nome", nome);
         valoresFiguras.put("tipo", tipo);
+        valoresFiguras.put("nomeEng", nomeEng);
         db.insert("figuras", null, valoresFiguras);
     }
 }

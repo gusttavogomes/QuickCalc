@@ -21,8 +21,8 @@ public class ListFigura extends Activity {
         int numeroFigura = (Integer) getIntent().getExtras().get(EXTRA_NUMERO);
 
         try{
-            SQLiteOpenHelper cursosDatabaseHelper = new CalculoDataBaseHelper(this);
-            SQLiteDatabase db = cursosDatabaseHelper.getReadableDatabase();
+            SQLiteOpenHelper figurasDatabaseHelper = new CalculoDataBaseHelper(this);
+            SQLiteDatabase db = figurasDatabaseHelper.getReadableDatabase();
 
             Cursor cursor = db.query("figuras",
                     new String[] {"nome", "tipo"},
@@ -38,7 +38,7 @@ public class ListFigura extends Activity {
                 nome.setText(valorNome);
 
                 TextView tipo = (TextView) findViewById(R.id.tipo);
-                nome.setText(valorTipo);
+                tipo.setText(valorTipo);
             }
             cursor.close();
             db.close();
