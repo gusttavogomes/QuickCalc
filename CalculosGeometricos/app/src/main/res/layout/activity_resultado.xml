@@ -6,4 +6,156 @@
     android:layout_height="match_parent"
     tools:context=".ResultadoActivity">
 
+    <TextView
+        android:id="@+id/textViewResultado"
+        android:layout_width="99dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/resultado"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTituloArea"
+        android:layout_width="36dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/area"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTituloAdap" />
+
+    <TextView
+        android:id="@+id/textViewResultadoArea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="16dp"
+        android:text=""
+        app:layout_constraintStart_toEndOf="@+id/textViewTituloArea"
+        app:layout_constraintTop_toBottomOf="@+id/textViewResultadoAdap" />
+
+    <TextView
+        android:id="@+id/textViewNomeOperacao"
+        android:layout_width="0dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="16dp"
+        android:text=""
+        app:layout_constraintStart_toEndOf="@+id/textViewTituloOperacao"
+        app:layout_constraintTop_toBottomOf="@+id/textViewResultado" />
+
+    <TextView
+        android:id="@+id/textViewTituloAdap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text=""
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPlano" />
+
+    <TextView
+        android:id="@+id/textViewResultadoAdap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="16dp"
+        android:text=""
+        app:layout_constraintStart_toEndOf="@+id/textViewTituloAdap"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPlano" />
+
+    <TextView
+        android:id="@+id/textViewNomeFigura"
+        android:layout_width="0dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="16dp"
+        android:text=""
+        app:layout_constraintStart_toEndOf="@+id/textViewTituloFigura"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTituloOperacao" />
+
+    <TextView
+        android:id="@+id/textViewPlano"
+        android:layout_width="0dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="16dp"
+        android:text=""
+        app:layout_constraintStart_toEndOf="@+id/textViewTituloPlano"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTituloFigura" />
+
+    <Button
+        android:id="@+id/buttonHistorico"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:onClick="listarHistorico"
+        android:text="@string/hist_rico"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTituloArea" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/enviar_sms"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonHistorico"
+        app:layout_constraintTop_toBottomOf="@+id/textViewResultadoArea" />
+
+    <TextView
+        android:id="@+id/textViewTituloOperacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/nome_da_opera_o"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewResultado" />
+
+    <TextView
+        android:id="@+id/textViewTituloFigura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/nome_da_figura"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTituloOperacao" />
+
+    <TextView
+        android:id="@+id/textViewTituloPlano"
+        android:layout_width="43dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/plano"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTituloFigura" />
 </android.support.constraint.ConstraintLayout>

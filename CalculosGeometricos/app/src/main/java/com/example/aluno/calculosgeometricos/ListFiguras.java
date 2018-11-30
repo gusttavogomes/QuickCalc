@@ -15,10 +15,12 @@ import android.widget.Toast;
 
 public class ListFiguras extends ListActivity {
     public static final String NOMEFIGURA = "com.example.aluno.calculosgeometricos.NOMEFIGURA" ;
+    public static final String NOMEFIGURAENG = "com.example.aluno.calculosgeometricos.NOMEFIGURAENG";
     private SQLiteDatabase db;
     private Cursor cursor;
     private String plano;
     private String valorNome;
+    private String valorNomeEng;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +29,7 @@ public class ListFiguras extends ListActivity {
 
         plano = getIntent().getStringExtra(MenuActivity.PLANO);
 
-        if(plano.equals("bidimensional")){
+        if(plano.equals("Bidimensional")){
             try{
                 SQLiteOpenHelper figurasDatabaseHelper = new CalculoDataBaseHelper(this);
                 db = figurasDatabaseHelper.getReadableDatabase();
@@ -50,7 +52,7 @@ public class ListFiguras extends ListActivity {
                 toast.show();
             }
         }
-        else if (plano.equals("tridimensional")){
+        else if (plano.equals("Tridimensional")){
             try{
                 SQLiteOpenHelper figurasDatabaseHelper = new CalculoDataBaseHelper(this);
                 db = figurasDatabaseHelper.getReadableDatabase();
@@ -98,6 +100,7 @@ public class ListFiguras extends ListActivity {
 
             if(cursor.moveToFirst()){
                 valorNome = cursor.getString(0);
+                valorNomeEng = cursor.getString(2);
             }
             cursor.close();
             db.close();
@@ -109,12 +112,31 @@ public class ListFiguras extends ListActivity {
         if (valorNome.equals("Quadrado")){
             Intent intent = new Intent(this, UmCampoActivity.class);
             intent.putExtra(NOMEFIGURA, valorNome);
+            intent.putExtra(NOMEFIGURAENG, valorNomeEng);
+            intent.putExtra(MenuActivity.PLANO, plano);
             startActivity(intent);
         }
-        else if (valorNome.equals("Retangulo")){
+        else if (valorNome.equals("Circulo")){
             Intent intent = new Intent(this, UmCampoActivity.class);
             intent.putExtra(NOMEFIGURA, valorNome);
+            intent.putExtra(NOMEFIGURAENG, valorNomeEng);
+            intent.putExtra(MenuActivity.PLANO, plano);
             startActivity(intent);
         }
+        else if (valorNome.equals("Cubo")){
+            Intent intent = new Intent(this, UmCampoActivity.class);
+            intent.putExtra(NOMEFIGURA, valorNome);
+            intent.putExtra(NOMEFIGURAENG, valorNomeEng);
+            intent.putExtra(MenuActivity.PLANO, plano);
+            startActivity(intent);
+        }
+        else if (valorNome.equals("Esfera")){
+            Intent intent = new Intent(this, UmCampoActivity.class);
+            intent.putExtra(NOMEFIGURA, valorNome);
+            intent.putExtra(NOMEFIGURAENG, valorNomeEng);
+            intent.putExtra(MenuActivity.PLANO, plano);
+            startActivity(intent);
+        }
+
     }
 }

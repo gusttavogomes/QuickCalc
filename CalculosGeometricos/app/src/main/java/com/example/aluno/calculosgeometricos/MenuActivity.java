@@ -18,7 +18,7 @@ public class MenuActivity extends Activity {
         Intent intent = new Intent(this, ListFiguras.class);
         startActivity(intent);
 
-        String tipoFigura = "tridimensional";
+        String tipoFigura = "Tridimensional";
         intent.putExtra(PLANO, tipoFigura);
 
         startActivity(intent);
@@ -28,7 +28,7 @@ public class MenuActivity extends Activity {
         Intent intent = new Intent(this, ListFiguras.class);
         startActivity(intent);
 
-        String tipoFigura = "bidimensional";
+        String tipoFigura = "Bidimensional";
         intent.putExtra(PLANO, tipoFigura);
 
         startActivity(intent);

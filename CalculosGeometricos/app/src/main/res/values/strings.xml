@@ -7,4 +7,10 @@
     <string name="tridimensional">Tridimensional</string>
     <string name="a_figura_que_ser_utilizada_para_o_calculo">A figura que será utilizada para o calculo é</string>
     <string name="calcular">Calcular</string>
+    <string name="enviar_sms">Enviar SMS</string>
+    <string name="resultado">Resultado</string>
+    <string name="area">Área: </string>
+    <string name="nome_da_opera_o">Nome da operação:</string>
+    <string name="nome_da_figura">Nome da figura:</string>
+    <string name="plano">Plano:</string>
 </resources>
