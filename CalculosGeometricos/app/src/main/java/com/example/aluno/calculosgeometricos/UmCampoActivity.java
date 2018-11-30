@@ -58,29 +58,29 @@ public class UmCampoActivity extends Activity {
         Double volume;
 
         if(nomeFigura.equals("Quadrado")){
-            area = v1 * v1;
+            area = Math.pow(v1,2);
             perimetro = v1 * 4;
 
             resultadoArea = area.toString();
             resultadoPerimetro = perimetro.toString();
         }
         else if(nomeFigura.equals("Circulo")){
-            area = 3.1415926 * (v1 * v1);
-            perimetro = (3.1415926 * 3.1415926) * v1;
+            area = 3.1415926 * Math.pow(v1,2);
+            perimetro = Math.pow(3.1415926,2) * v1;
 
             resultadoArea = area.toString();
             resultadoPerimetro = perimetro.toString();
         }
         else if(nomeFigura.equals("Cubo")){
-            area = 6 * (v1 * v1);
-            volume = v1 * v1 * v1;
+            area = 6 * Math.pow(v1,2);
+            volume = Math.pow(v1,3);
 
-            resultadoVolume = volume.toString();
             resultadoArea = area.toString();
+            resultadoVolume = volume.toString();
         }
         else if(nomeFigura.equals("Esfera")){
-            area = 4 * 3.1415926 * (v1 * v1);
-            volume = (4 * 3.1415926 * (v1 * v1 * v1)) / 3;
+            area = 4 * 3.1415926 * Math.pow(v1,2);
+            volume = (4 * 3.1415926 * Math.pow(v1,3)) / 3;
 
             resultadoVolume = volume.toString();
             resultadoArea = area.toString();

@@ -31,7 +31,7 @@ public class ResultadoActivity extends Activity {
         textViewPlano.setText(plano);
         textViewNomeFigura.setText(nomeFigura);
 
-        if(resultadoPerimetro.equals("")){
+        if(plano.equals("Tridimensional")){
             textViewResultadoAdap.setText(resultadoVolume);
             textViewTituloAdap.setText("Volume: ");
         }
