@@ -26,15 +26,15 @@ public class CalculoDataBaseHelper extends SQLiteOpenHelper {
                 "_idFigura INTEGER, " +
                 "FOREIGN KEY(_idFigura) REFERENCES _id(figuras));");
 
-        insertFiguras(db, "Quadrado", "Bidimensional", "");
-        insertFiguras(db, "Retangulo", "Bidimensional", "");
-        insertFiguras(db, "Triangulo", "Bidimensional", "");
-        insertFiguras(db, "Circulo", "Bidimensional", "");
+        insertFiguras(db, "Quadrado", "Bidimensional", "Square");
+        insertFiguras(db, "Retangulo", "Bidimensional", "Rectangle");
+        insertFiguras(db, "Triangulo", "Bidimensional", "Triangle");
+        insertFiguras(db, "Circulo", "Bidimensional", "Circle");
 
-        insertFiguras(db, "Cubo", "Tridimensional", "");
-        insertFiguras(db, "Prisma retangular", "Tridimensional", "");
-        insertFiguras(db, "Prisma Triangular", "Tridimensional", "");
-        insertFiguras(db, "Esfera", "Tridimensional", "");
+        insertFiguras(db, "Cubo", "Tridimensional", "Cube");
+        insertFiguras(db, "Prisma retangular", "Tridimensional", "Rectangular Prism");
+        insertFiguras(db, "Prisma Triangular", "Tridimensional", "Triangular Prism");
+        insertFiguras(db, "Esfera", "Tridimensional", "Sphere");
     }
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     }

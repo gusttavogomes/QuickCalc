@@ -1,20 +1,21 @@
 <resources>
     <string name="app_name">QuickCalc</string>
-    <string name="info">Info</string>
-    <string name="iniciar">Iniciar</string>
-    <string name="hist_rico">Histórico</string>
-    <string name="bidimensional">Bidimensional</string>
-    <string name="tridimensional">Tridimensional</string>
-    <string name="a_figura_que_ser_utilizada_para_o_calculo">A figura que será utilizada para o calculo é</string>
-    <string name="calcular">Calcular</string>
-    <string name="enviar_sms">Enviar SMS</string>
-    <string name="resultado">resultado</string>
-    <string name="area">Área: </string>
-    <string name="nome_da_opera_o">Nome da operação:</string>
-    <string name="nome_da_figura">Nome da figura:</string>
-    <string name="plano">Plano:</string>
-    <string name="aresta">Valor de uma das aresta</string>
-    <string name="raio">Valor do raio</string>
+    <string name="idioma">Language</string>
+    <string name="iniciar">Start</string>
+    <string name="hist_rico">Historic</string>
+    <string name="bidimensional">Two-dimensional</string>
+    <string name="tridimensional">Three-dimensional</string>
+    <string name="a_figura_que_ser_utilizada_para_o_calculo">The figure that will be used for the calculation is</string>
+    <string name="calcular">Calculate</string>
+    <string name="enviar_sms">Send SMS</string>
+    <string name="resultado">Result</string>
+    <string name="area">Area: </string>
+    <string name="nome_da_opera_o">Name of operation:</string>
+    <string name="nome_da_figura">Name of figure:</string>
+    <string name="plano">Plan:</string>
+    <string name="aresta">Value of one edge</string>
+    <string name="raio">Radius value</string>
     <string name="volume">Volume: </string>
-    <string name="perimetro">Perímetro: </string>
+    <string name="perimetro">perimeter: </string>
+    <string name="nome_da_operacao">Name of operation</string>
 </resources>

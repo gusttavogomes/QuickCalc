@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">QuickCalc</string>
-    <string name="info">Info</string>
+    <string name="idioma">Idioma</string>
     <string name="iniciar">Iniciar</string>
     <string name="hist_rico">Histórico</string>
     <string name="bidimensional">Bidimensional</string>
@@ -17,4 +17,5 @@
     <string name="raio">Valor do raio</string>
     <string name="volume">Volume: </string>
     <string name="perimetro">Perímetro: </string>
+    <string name="nome_da_operacao">Nome da operação</string>
 </resources>

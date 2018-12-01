@@ -24,6 +24,10 @@ public class ListFiguras extends ListActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        String idiomaBase = "Idioma";
+        String idiomaUtilizado = getString(R.string.idioma);
+        CursorAdapter listAdapter;
+
         super.onCreate(savedInstanceState);
         ListView listFiguras = getListView();
 
@@ -40,11 +44,20 @@ public class ListFiguras extends ListActivity {
                         new String[]{"Bidimensional"},//substitui o ? no where
                         null,null,null,null);//restante dos parametros null
 
-                CursorAdapter listAdapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_1,
-                        cursor,
-                        new String[]{"nome"},
-                        new int[]{android.R.id.text1},
-                        0);
+                if(idiomaBase.equals(idiomaUtilizado)){
+                    listAdapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_1,
+                            cursor,
+                            new String[]{"nome"},
+                            new int[]{android.R.id.text1},
+                            0);
+                }
+                else{
+                    listAdapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_1,
+                            cursor,
+                            new String[]{"nomeEng"},
+                            new int[]{android.R.id.text1},
+                            0);
+                }
 
                 listFiguras.setAdapter(listAdapter);
             }catch (SQLiteException e) {
@@ -63,11 +76,20 @@ public class ListFiguras extends ListActivity {
                         new String[]{"Tridimensional"},//substitui o ? no where
                         null,null,null,null);//restante dos parametros null
 
-                CursorAdapter listAdapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_1,
-                        cursor,
-                        new String[]{"nome"},
-                        new int[]{android.R.id.text1},
-                        0);
+                if(idiomaBase.equals(idiomaUtilizado)){
+                    listAdapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_1,
+                            cursor,
+                            new String[]{"nome"},
+                            new int[]{android.R.id.text1},
+                            0);
+                }
+                else{
+                    listAdapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_1,
+                            cursor,
+                            new String[]{"nomeEng"},
+                            new int[]{android.R.id.text1},
+                            0);
+                }
 
                 listFiguras.setAdapter(listAdapter);
             }catch (SQLiteException e) {
@@ -137,6 +159,5 @@ public class ListFiguras extends ListActivity {
             intent.putExtra(MenuActivity.PLANO, plano);
             startActivity(intent);
         }
-
     }
 }
