@@ -65,8 +65,8 @@ public class UmCampoActivity extends Activity {
             resultadoPerimetro = perimetro.toString();
         }
         else if(nomeFigura.equals("Circulo")){
-            area = 3.1415926 * Math.pow(v1,2);
-            perimetro = Math.pow(3.1415926,2) * v1;
+            area = Math.pow(v1,2) * 3.1415926;
+            perimetro = 2 * 3.1415926 * v1;
 
             resultadoArea = area.toString();
             resultadoPerimetro = perimetro.toString();
