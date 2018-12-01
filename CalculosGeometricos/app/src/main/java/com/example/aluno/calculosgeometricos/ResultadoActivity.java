@@ -33,11 +33,11 @@ public class ResultadoActivity extends Activity {
 
         if(plano.equals("Tridimensional")){
             textViewResultadoAdap.setText(resultadoVolume);
-            textViewTituloAdap.setText("Volume: ");
+            textViewTituloAdap.setText(R.string.volume);
         }
         else {
             textViewResultadoAdap.setText(resultadoPerimetro);
-            textViewTituloAdap.setText("Perímetro: ");
+            textViewTituloAdap.setText(R.string.perimetro);
         }
         textViewResultadoArea.setText(resultadoArea);
     }

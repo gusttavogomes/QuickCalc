@@ -13,4 +13,8 @@
     <string name="nome_da_opera_o">Nome da operação:</string>
     <string name="nome_da_figura">Nome da figura:</string>
     <string name="plano">Plano:</string>
+    <string name="aresta">Valor de uma das aresta</string>
+    <string name="raio">Valor do raio</string>
+    <string name="volume">Volume: </string>
+    <string name="perimetro">Perímetro: </string>
 </resources>

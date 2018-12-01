@@ -31,16 +31,16 @@ public class UmCampoActivity extends Activity {
         textViewNomeFigura.setText(nomeFigura);
 
         if(nomeFigura.equals("Quadrado")){
-            editTextLado1.setHint("Valor de uma das aresta");
+            editTextLado1.setHint(R.string.aresta);
         }
         else if(nomeFigura.equals("Circulo")){
-            editTextLado1.setHint("Valor do raio");
+            editTextLado1.setHint(R.string.raio);
         }
         else if(nomeFigura.equals("Cubo")){
-            editTextLado1.setHint("Valor de uma das aresta");
+            editTextLado1.setHint(R.string.aresta);
         }
         else if(nomeFigura.equals("Esfera")){
-            editTextLado1.setHint("Valor do raio");
+            editTextLado1.setHint(R.string.raio);
         }
     }
 
@@ -82,8 +82,8 @@ public class UmCampoActivity extends Activity {
             area = 4 * 3.1415926 * Math.pow(v1,2);
             volume = (4 * 3.1415926 * Math.pow(v1,3)) / 3;
 
-            resultadoVolume = volume.toString();
             resultadoArea = area.toString();
+            resultadoVolume = volume.toString();
         }
 
         intent.putExtra(NOMEOPERACAO, nomeOperacao);
