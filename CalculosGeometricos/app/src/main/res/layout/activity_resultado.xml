@@ -78,7 +78,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewPlano" />
 
     <TextView
-        android:id="@+id/textViewNomeFigura"
+        android:id="@+id/textViewDoisNomeFigura"
         android:layout_width="0dp"
         android:layout_height="19dp"
         android:layout_marginStart="1dp"

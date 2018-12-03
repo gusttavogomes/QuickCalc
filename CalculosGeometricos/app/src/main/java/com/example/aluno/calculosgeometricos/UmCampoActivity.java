@@ -13,8 +13,9 @@ public class UmCampoActivity extends Activity {
     public static final String RESULTADOPERIMETRO = "com.example.aluno.calculosgeometricos.RESULTADOPERIMETRO";
     public static final String RESULTADOVOLUME = "com.example.aluno.calculosgeometricos.RESULTADOVOLUME";
     public static final String NOMEOPERACAO = "com.example.aluno.calculosgeometricos.NOMEOPERACAO";
-    private EditText editTextLado1;
+    private EditText editTextCampo1;
     private String nomeFigura;
+    private String nomeFiguraEng;
     private String resultadoArea;
     private String resultadoPerimetro;
     private String resultadoVolume;
@@ -24,31 +25,31 @@ public class UmCampoActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_um_campo);
 
-        editTextLado1 =  findViewById(R.id.editTextLado1);
-        TextView textViewNomeFigura =  findViewById(R.id.textViewNomeFigura);
-        nomeFigura = getIntent().getStringExtra(ListFiguras.NOMEFIGURA);
+        editTextCampo1 =  findViewById(R.id.editTextUmCampo1);
 
-        textViewNomeFigura.setText(nomeFigura);
+        nomeFigura = getIntent().getStringExtra(ListFiguras.NOMEFIGURA);
+        nomeFiguraEng = getIntent().getStringExtra(ListFiguras.NOMEFIGURAENG);
+
 
         if(nomeFigura.equals("Quadrado")){
-            editTextLado1.setHint(R.string.aresta);
+            editTextCampo1.setHint(R.string.aresta);
         }
         else if(nomeFigura.equals("Circulo")){
-            editTextLado1.setHint(R.string.raio);
+            editTextCampo1.setHint(R.string.raio);
         }
         else if(nomeFigura.equals("Cubo")){
-            editTextLado1.setHint(R.string.aresta);
+            editTextCampo1.setHint(R.string.aresta);
         }
         else if(nomeFigura.equals("Esfera")){
-            editTextLado1.setHint(R.string.raio);
+            editTextCampo1.setHint(R.string.raio);
         }
     }
 
     public void calcular(View view) {
         Intent intent = new Intent(this, ResultadoActivity.class);
-        EditText editTextNomeOperacao = (EditText) findViewById(R.id.editTextNomeOperacao);
+        EditText editTextNomeOperacao = (EditText) findViewById(R.id.editTextNomeOperacao2);
 
-        String lado1 = editTextLado1.getText().toString();
+        String lado1 = editTextCampo1.getText().toString();
         String nomeOperacao = editTextNomeOperacao.getText().toString();
         String plano = getIntent().getStringExtra(MenuActivity.PLANO);
 
@@ -89,6 +90,7 @@ public class UmCampoActivity extends Activity {
         intent.putExtra(NOMEOPERACAO, nomeOperacao);
         intent.putExtra(MenuActivity.PLANO, plano);
         intent.putExtra(ListFiguras.NOMEFIGURA, nomeFigura);
+
         intent.putExtra(RESULTADOPERIMETRO, resultadoPerimetro);
         intent.putExtra(RESULTADOVOLUME, resultadoVolume);
         intent.putExtra(RESULTADOAREA, resultadoArea);

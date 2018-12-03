@@ -13,6 +13,11 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
+import com.example.aluno.calculosgeometricos.CalculoDataBaseHelper;
+import com.example.aluno.calculosgeometricos.MenuActivity;
+import com.example.aluno.calculosgeometricos.R;
+import com.example.aluno.calculosgeometricos.UmCampoActivity;
+
 public class ListFiguras extends ListActivity {
     public static final String NOMEFIGURA = "com.example.aluno.calculosgeometricos.NOMEFIGURA" ;
     public static final String NOMEFIGURAENG = "com.example.aluno.calculosgeometricos.NOMEFIGURAENG";
@@ -159,5 +164,20 @@ public class ListFiguras extends ListActivity {
             intent.putExtra(MenuActivity.PLANO, plano);
             startActivity(intent);
         }
+        else if (valorNome.equals("Triangulo")){
+            Intent intent = new Intent(this, TipoTrianguloActivity.class);
+            intent.putExtra(NOMEFIGURA, valorNome);
+            intent.putExtra(NOMEFIGURAENG, valorNomeEng);
+            intent.putExtra(MenuActivity.PLANO, plano);
+            startActivity(intent);
+        }
+        else if(valorNome.equals("Retangulo")){
+            Intent intent = new Intent(this, DoisCamposActivity.class);
+            intent.putExtra(NOMEFIGURA, valorNome);
+            intent.putExtra(NOMEFIGURAENG, valorNomeEng);
+            intent.putExtra(MenuActivity.PLANO, plano);
+            startActivity(intent);
+        }
     }
 }
+

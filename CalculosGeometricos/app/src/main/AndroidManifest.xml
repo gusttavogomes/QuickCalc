@@ -27,7 +27,10 @@
             android:name=".ListFigura"
             android:parentActivityName=".ListFiguras" />
         <activity android:name=".UmCampoActivity" />
-        <activity android:name=".ResultadoActivity"></activity>
+        <activity android:name=".ResultadoActivity" />
+        <activity android:name=".DoisCamposActivity" />
+        <activity android:name=".TresCamposActivity" />
+        <activity android:name=".TipoTrianguloActivity"></activity>
     </application>
 
 </manifest>

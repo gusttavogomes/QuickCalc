@@ -6,6 +6,7 @@
     <string name="bidimensional">Two-dimensional</string>
     <string name="tridimensional">Three-dimensional</string>
     <string name="a_figura_que_ser_utilizada_para_o_calculo">The figure that will be used for the calculation is</string>
+    <string name="titulo_triangulos">What kind of triangle is it?</string>
     <string name="calcular">Calculate</string>
     <string name="enviar_sms">Send SMS</string>
     <string name="resultado">Result</string>
@@ -15,6 +16,9 @@
     <string name="plano">Plan:</string>
     <string name="aresta">Value of one edge</string>
     <string name="raio">Radius value</string>
+    <string name="largura">Value of width</string>
+    <string name="altura">Value of height</string>
+    <string name="base">Value of base</string>
     <string name="volume">Volume: </string>
     <string name="perimetro">perimeter: </string>
     <string name="nome_da_operacao">Name of operation</string>
