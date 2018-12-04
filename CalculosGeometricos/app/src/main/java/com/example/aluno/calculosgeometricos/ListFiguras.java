@@ -178,6 +178,20 @@ public class ListFiguras extends ListActivity {
             intent.putExtra(MenuActivity.PLANO, plano);
             startActivity(intent);
         }
+        else if(valorNome.equals("Prisma triangular")){
+            Intent intent = new Intent(this, TresCamposActivity.class);
+            intent.putExtra(NOMEFIGURA, valorNome);
+            intent.putExtra(NOMEFIGURAENG, valorNomeEng);
+            intent.putExtra(MenuActivity.PLANO, plano);
+            startActivity(intent);
+        }
+        else if(valorNome.equals("Prisma retangular")){
+            Intent intent = new Intent(this, TresCamposActivity.class);
+            intent.putExtra(NOMEFIGURA, valorNome);
+            intent.putExtra(NOMEFIGURAENG, valorNomeEng);
+            intent.putExtra(MenuActivity.PLANO, plano);
+            startActivity(intent);
+        }
     }
 }
 

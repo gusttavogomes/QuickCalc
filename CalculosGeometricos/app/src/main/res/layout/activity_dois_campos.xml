@@ -34,7 +34,7 @@
         android:layout_marginRight="16dp"
         android:ems="10"
         android:hint="@string/base"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,14 +51,14 @@
         android:layout_marginRight="16dp"
         android:ems="10"
         android:hint="@string/altura"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDoisCampo1" />
 
     <Button
-        android:id="@+id/buttonCalcular"
+        android:id="@+id/buttonDoisCalcular"
         android:layout_width="105dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

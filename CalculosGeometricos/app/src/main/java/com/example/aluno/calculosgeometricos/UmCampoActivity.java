@@ -90,7 +90,7 @@ public class UmCampoActivity extends Activity {
         intent.putExtra(NOMEOPERACAO, nomeOperacao);
         intent.putExtra(MenuActivity.PLANO, plano);
         intent.putExtra(ListFiguras.NOMEFIGURA, nomeFigura);
-
+        intent.putExtra(ListFiguras.NOMEFIGURAENG, nomeFiguraEng);
         intent.putExtra(RESULTADOPERIMETRO, resultadoPerimetro);
         intent.putExtra(RESULTADOVOLUME, resultadoVolume);
         intent.putExtra(RESULTADOAREA, resultadoArea);

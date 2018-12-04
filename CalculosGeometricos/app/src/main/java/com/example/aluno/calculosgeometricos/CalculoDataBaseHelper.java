@@ -33,7 +33,7 @@ public class CalculoDataBaseHelper extends SQLiteOpenHelper {
 
         insertFiguras(db, "Cubo", "Tridimensional", "Cube");
         insertFiguras(db, "Prisma retangular", "Tridimensional", "Rectangular Prism");
-        insertFiguras(db, "Prisma Triangular", "Tridimensional", "Triangular Prism");
+        insertFiguras(db, "Prisma triangular", "Tridimensional", "Triangular Prism");
         insertFiguras(db, "Esfera", "Tridimensional", "Sphere");
     }
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

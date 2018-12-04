@@ -22,4 +22,11 @@
     <string name="volume">Volume: </string>
     <string name="perimetro">Perímetro: </string>
     <string name="nome_da_operacao">Nome da operação</string>
+    <string name="ret_ngulo">Retângulo</string>
+    <string name="is_sceles">Isósceles</string>
+    <string name="equil_tero">Equilátero</string>
+    <string name="altura_base">Valor da altura da base</string>
+    <string name="largura_base">Largura do prisma</string>
+    <string name="altura_do_prisma">Altura do prisma</string>
+    <string name="comprimento">Comprimento do prisma</string>
 </resources>
