@@ -26,7 +26,8 @@
     <string name="is_sceles">Isósceles</string>
     <string name="equil_tero">Equilátero</string>
     <string name="altura_base">Valor da altura da base</string>
-    <string name="largura_base">largura da base</string>
+    <string name="largura_base">Largura da base</string>
     <string name="altura_do_prisma">Altura do Prisma</string>
     <string name="comprimento">Comprimento do Prisma</string>
+    <string name="salvar">Salvar</string>
 </resources>

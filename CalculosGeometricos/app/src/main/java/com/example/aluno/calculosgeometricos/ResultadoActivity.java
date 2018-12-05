@@ -13,11 +13,17 @@ import android.widget.Toast;
 import static com.example.aluno.calculosgeometricos.CalculoDataBaseHelper.insertHistorico;
 
 public class ResultadoActivity extends Activity {
+    private String nomeOperacao;
+    private String resultadoPerimetro;
+    private String resultadoVolume;
+    private String resultadoArea;
+    private int idFigura;
+    private SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         SQLiteOpenHelper calculoDataBaseHelper = new CalculoDataBaseHelper(this);
-        SQLiteDatabase db = calculoDataBaseHelper.getWritableDatabase();
+        db = calculoDataBaseHelper.getWritableDatabase();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultado);
@@ -45,13 +51,13 @@ public class ResultadoActivity extends Activity {
         }
 
 
-        String nomeOperacao = getIntent().getStringExtra(UmCampoActivity.NOMEOPERACAO);
-        String resultadoPerimetro = getIntent().getStringExtra(UmCampoActivity.RESULTADOPERIMETRO);
-        String resultadoVolume = getIntent().getStringExtra(UmCampoActivity.RESULTADOVOLUME);
-        String resultadoArea = getIntent().getStringExtra(UmCampoActivity.RESULTADOAREA);
+        nomeOperacao = getIntent().getStringExtra(UmCampoActivity.NOMEOPERACAO);
+        resultadoPerimetro = getIntent().getStringExtra(UmCampoActivity.RESULTADOPERIMETRO);
+        resultadoVolume = getIntent().getStringExtra(UmCampoActivity.RESULTADOVOLUME);
+        resultadoArea = getIntent().getStringExtra(UmCampoActivity.RESULTADOAREA);
         String idFig = getIntent().getStringExtra(ListFiguras.IDFIGURA);
 
-        int idFigura = Integer.parseInt(idFig);
+        idFigura = Integer.parseInt(idFig);
 
         TextView textViewNomeOperacao = findViewById(R.id.textViewNomeOperacao);
         TextView textViewPlano = findViewById(R.id.textViewPlano);
@@ -74,16 +80,17 @@ public class ResultadoActivity extends Activity {
         }
         textViewResultadoArea.setText(resultadoArea);
 
+    }
+
+    public void listarHistorico(View view) {
+        Intent intent = new Intent(this, HomeActivity.class);
+
         try{
             insertHistorico(db, nomeOperacao, resultadoArea, resultadoVolume, resultadoPerimetro , idFigura);
         }catch (SQLException e){
             Toast toast = Toast.makeText(this, "DB indisponível", Toast.LENGTH_LONG);
             toast.show();
         }
-    }
-
-    public void listarHistorico(View view) {
-        Intent intent = new Intent(this, HistoricoActivity.class);
         startActivity(intent);
     }
 }

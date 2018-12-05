@@ -6,4 +6,100 @@
     android:layout_height="match_parent"
     tools:context=".HistoricoActivity">
 
+    <TextView
+        android:id="@+id/textViewHistoricoNomeOperacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewHistoricoTituloNomeFigura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/nome_da_figura"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHistoricoNomeOperacao" />
+
+    <TextView
+        android:id="@+id/textViewHistoricoTituloPlano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/plano"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHistoricoTituloNomeFigura" />
+
+    <TextView
+        android:id="@+id/textViewHistoricoTituloAdaptativo"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHistoricoTituloPlano" />
+
+    <TextView
+        android:id="@+id/textViewHistoricoTituloArea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/area"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHistoricoTituloAdaptativo" />
+
+    <TextView
+        android:id="@+id/textViewHistoricoNomeFigura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/textViewHistoricoTituloNomeFigura"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHistoricoNomeOperacao" />
+
+    <TextView
+        android:id="@+id/textViewHistoricoPlano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/textViewHistoricoTituloPlano"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHistoricoNomeFigura" />
+
+    <TextView
+        android:id="@+id/textViewHistoricoResultadoAdaptativo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/textViewHistoricoTituloAdaptativo"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHistoricoPlano" />
+
+    <TextView
+        android:id="@+id/textViewHistoricoResultadoArea"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/textViewHistoricoTituloArea"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHistoricoTituloAdaptativo" />
 </android.support.constraint.ConstraintLayout>

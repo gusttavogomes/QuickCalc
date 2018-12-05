@@ -19,19 +19,20 @@ public class ListFiguras extends ListActivity {
     public static final String NOMEFIGURAENG = "com.example.aluno.calculosgeometricos.NOMEFIGURAENG";
     public static final String IDFIGURA = "com.example.aluno.calculosgeometricos.IDFIGURA";
     private SQLiteDatabase db;
-    private String idFigura;
     private Cursor cursor;
+    private String idFigura;
     private String plano;
     private String valorNome;
     private String valorNomeEng;
+    private int v1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         String idiomaBase = "Idioma";
         String idiomaUtilizado = getString(R.string.idioma);
-        CursorAdapter listAdapter;
 
-        super.onCreate(savedInstanceState);
+        CursorAdapter listAdapter;
         ListView listFiguras = getListView();
 
         plano = getIntent().getStringExtra(MenuActivity.PLANO);

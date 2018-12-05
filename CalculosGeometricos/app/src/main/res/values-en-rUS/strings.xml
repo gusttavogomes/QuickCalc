@@ -20,13 +20,14 @@
     <string name="altura">Value of height</string>
     <string name="base">Value of base</string>
     <string name="volume">Volume: </string>
-    <string name="perimetro">perimeter: </string>
+    <string name="perimetro">"Perimeter: "</string>
     <string name="nome_da_operacao">Name of operation</string>
-    <string name="ret_ngulo">Retângulo</string>
-    <string name="is_sceles">Isósceles</string>
-    <string name="equil_tero">Equilátero</string>
-    <string name="altura_base">Valor da altura da base</string>
-    <string name="largura_base">Largura da base</string>
-    <string name="altura_do_prisma">Altura do Prisma</string>
-    <string name="comprimento">Comprimento do Prisma</string>
+    <string name="ret_ngulo">Rectangle</string>
+    <string name="is_sceles">Isosceles</string>
+    <string name="equil_tero">Equilateral</string>
+    <string name="altura_base">"Value of base height "</string>
+    <string name="largura_base">"Base width "</string>
+    <string name="altura_do_prisma">"Prism Height "</string>
+    <string name="comprimento">"Length of Prism "</string>
+    <string name="salvar">Save</string>
 </resources>

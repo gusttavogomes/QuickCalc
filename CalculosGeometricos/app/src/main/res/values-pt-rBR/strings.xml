@@ -29,4 +29,5 @@
     <string name="largura_base">Largura do prisma</string>
     <string name="altura_do_prisma">Altura do prisma</string>
     <string name="comprimento">Comprimento do prisma</string>
+    <string name="salvar">Salvar</string>
 </resources>

@@ -19,7 +19,7 @@ public class HomeActivity extends Activity {
     }
 
     public void listarHistorico(View view) {
-        Intent intent = new Intent(this, HistoricoActivity.class);
+        Intent intent = new Intent(this, ListHistoricoActivity.class);
         startActivity(intent);
     }
 }

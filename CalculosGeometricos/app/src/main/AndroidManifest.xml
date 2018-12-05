@@ -23,14 +23,12 @@
         <activity
             android:name=".ListFiguras"
             android:parentActivityName=".MenuActivity" />
-        <activity
-            android:name=".ListFigura"
-            android:parentActivityName=".ListFiguras" />
         <activity android:name=".UmCampoActivity" />
         <activity android:name=".ResultadoActivity" />
         <activity android:name=".DoisCamposActivity" />
         <activity android:name=".TresCamposActivity" />
-        <activity android:name=".TipoTrianguloActivity"></activity>
+        <activity android:name=".TipoTrianguloActivity" />
+        <activity android:name=".ListHistoricoActivity"></activity>
     </application>
 
 </manifest>
