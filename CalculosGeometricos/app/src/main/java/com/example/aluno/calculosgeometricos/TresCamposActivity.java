@@ -13,6 +13,7 @@ public class TresCamposActivity extends Activity {
     private EditText editTextCampo1;
     private EditText editTextCampo2;
     private EditText editTextCampo3;
+    private String idFigura;
     private String nomeFigura;
     private String nomeFiguraEng;
     private String resultadoArea;
@@ -29,6 +30,7 @@ public class TresCamposActivity extends Activity {
 
         nomeFigura = getIntent().getStringExtra(ListFiguras.NOMEFIGURA);
         nomeFiguraEng = getIntent().getStringExtra(ListFiguras.NOMEFIGURAENG);
+        idFigura = getIntent().getStringExtra(ListFiguras.IDFIGURA);
 
         if(nomeFigura.equals("Prisma retangular")){
             editTextCampo2.setHint(R.string.largura_base);
@@ -78,6 +80,7 @@ public class TresCamposActivity extends Activity {
         intent.putExtra(MenuActivity.PLANO, plano);
         intent.putExtra(ListFiguras.NOMEFIGURA, nomeFigura);
         intent.putExtra(ListFiguras.NOMEFIGURAENG, nomeFiguraEng);
+        intent.putExtra(ListFiguras.IDFIGURA, idFigura);
         intent.putExtra(RESULTADOVOLUME, resultadoVolume);
         intent.putExtra(RESULTADOAREA, resultadoArea);
 

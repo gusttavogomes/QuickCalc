@@ -14,6 +14,7 @@ public class DoisCamposActivity extends Activity {
     public static final String NOMEOPERACAO = "com.example.aluno.calculosgeometricos.NOMEOPERACAO";
     private EditText editTextCampo1;
     private EditText editTextCampo2;
+    private String idFigura;
     private String nomeFigura;
     private String nomeFiguraEng;
     private String resultadoArea;
@@ -32,6 +33,7 @@ public class DoisCamposActivity extends Activity {
         tipoTriangulo = getIntent().getStringExtra(TipoTrianguloActivity.TIPOTRIANGULO);
         nomeFigura = getIntent().getStringExtra(ListFiguras.NOMEFIGURA);
         nomeFiguraEng = getIntent().getStringExtra(ListFiguras.NOMEFIGURAENG);
+        idFigura = getIntent().getStringExtra(ListFiguras.IDFIGURA);
     }
 
     public void calcular(View view) {
@@ -87,6 +89,7 @@ public class DoisCamposActivity extends Activity {
         intent.putExtra(MenuActivity.PLANO, plano);
         intent.putExtra(ListFiguras.NOMEFIGURA, nomeFigura);
         intent.putExtra(ListFiguras.NOMEFIGURAENG, nomeFiguraEng);
+        intent.putExtra(ListFiguras.IDFIGURA, idFigura);
         intent.putExtra(RESULTADOPERIMETRO, resultadoPerimetro);
         intent.putExtra(RESULTADOAREA, resultadoArea);
 

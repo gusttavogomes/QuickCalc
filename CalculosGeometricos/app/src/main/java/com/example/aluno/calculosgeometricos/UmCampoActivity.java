@@ -14,6 +14,7 @@ public class UmCampoActivity extends Activity {
     public static final String RESULTADOVOLUME = "com.example.aluno.calculosgeometricos.RESULTADOVOLUME";
     public static final String NOMEOPERACAO = "com.example.aluno.calculosgeometricos.NOMEOPERACAO";
     private EditText editTextCampo1;
+    private String idFigura;
     private String nomeFigura;
     private String nomeFiguraEng;
     private String resultadoArea;
@@ -29,6 +30,7 @@ public class UmCampoActivity extends Activity {
 
         nomeFigura = getIntent().getStringExtra(ListFiguras.NOMEFIGURA);
         nomeFiguraEng = getIntent().getStringExtra(ListFiguras.NOMEFIGURAENG);
+        idFigura = getIntent().getStringExtra(ListFiguras.IDFIGURA);
 
 
         if(nomeFigura.equals("Quadrado")){
@@ -91,6 +93,7 @@ public class UmCampoActivity extends Activity {
         intent.putExtra(MenuActivity.PLANO, plano);
         intent.putExtra(ListFiguras.NOMEFIGURA, nomeFigura);
         intent.putExtra(ListFiguras.NOMEFIGURAENG, nomeFiguraEng);
+        intent.putExtra(ListFiguras.IDFIGURA, idFigura);
         intent.putExtra(RESULTADOPERIMETRO, resultadoPerimetro);
         intent.putExtra(RESULTADOVOLUME, resultadoVolume);
         intent.putExtra(RESULTADOAREA, resultadoArea);

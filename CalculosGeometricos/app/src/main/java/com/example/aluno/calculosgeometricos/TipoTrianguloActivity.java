@@ -7,6 +7,7 @@ import android.view.View;
 
 public class TipoTrianguloActivity extends Activity {
     public static final String TIPOTRIANGULO = "com.example.aluno.calculosgeometricos.TIPOTRIANGULO";
+    private String idFigura;
     private String nomeFigura;
     private String nomeFiguraEng;
     private String plano;
@@ -18,6 +19,7 @@ public class TipoTrianguloActivity extends Activity {
         nomeFigura = getIntent().getStringExtra(ListFiguras.NOMEFIGURA);
         nomeFiguraEng = getIntent().getStringExtra(ListFiguras.NOMEFIGURAENG);
         plano = getIntent().getStringExtra(MenuActivity.PLANO);
+        idFigura = getIntent().getStringExtra(ListFiguras.IDFIGURA);
 
     }
 
@@ -27,6 +29,7 @@ public class TipoTrianguloActivity extends Activity {
         intent.putExtra(ListFiguras.NOMEFIGURA, nomeFigura);
         intent.putExtra(ListFiguras.NOMEFIGURAENG, nomeFiguraEng);
         intent.putExtra(MenuActivity.PLANO, plano);
+        intent.putExtra(ListFiguras.IDFIGURA, idFigura);
         startActivity(intent);
     }
 
@@ -36,6 +39,7 @@ public class TipoTrianguloActivity extends Activity {
         intent.putExtra(ListFiguras.NOMEFIGURA, nomeFigura);
         intent.putExtra(ListFiguras.NOMEFIGURAENG, nomeFiguraEng);
         intent.putExtra(MenuActivity.PLANO, plano);
+        intent.putExtra(ListFiguras.IDFIGURA, idFigura);
         startActivity(intent);
     }
 
@@ -45,6 +49,7 @@ public class TipoTrianguloActivity extends Activity {
         intent.putExtra(ListFiguras.NOMEFIGURA, nomeFigura);
         intent.putExtra(ListFiguras.NOMEFIGURAENG, nomeFiguraEng);
         intent.putExtra(MenuActivity.PLANO, plano);
+        intent.putExtra(ListFiguras.IDFIGURA, idFigura);
         startActivity(intent);
     }
 }

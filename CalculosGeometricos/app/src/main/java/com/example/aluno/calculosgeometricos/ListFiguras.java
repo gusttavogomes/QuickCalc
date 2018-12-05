@@ -13,15 +13,13 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
-import com.example.aluno.calculosgeometricos.CalculoDataBaseHelper;
-import com.example.aluno.calculosgeometricos.MenuActivity;
-import com.example.aluno.calculosgeometricos.R;
-import com.example.aluno.calculosgeometricos.UmCampoActivity;
 
 public class ListFiguras extends ListActivity {
     public static final String NOMEFIGURA = "com.example.aluno.calculosgeometricos.NOMEFIGURA" ;
     public static final String NOMEFIGURAENG = "com.example.aluno.calculosgeometricos.NOMEFIGURAENG";
+    public static final String IDFIGURA = "com.example.aluno.calculosgeometricos.IDFIGURA";
     private SQLiteDatabase db;
+    private String idFigura;
     private Cursor cursor;
     private String plano;
     private String valorNome;
@@ -128,6 +126,7 @@ public class ListFiguras extends ListActivity {
             if(cursor.moveToFirst()){
                 valorNome = cursor.getString(0);
                 valorNomeEng = cursor.getString(2);
+                idFigura = String.valueOf(identificador);
             }
             cursor.close();
             db.close();
@@ -141,6 +140,7 @@ public class ListFiguras extends ListActivity {
             intent.putExtra(NOMEFIGURA, valorNome);
             intent.putExtra(NOMEFIGURAENG, valorNomeEng);
             intent.putExtra(MenuActivity.PLANO, plano);
+            intent.putExtra(IDFIGURA, idFigura);
             startActivity(intent);
         }
         else if (valorNome.equals("Circulo")){
@@ -148,6 +148,7 @@ public class ListFiguras extends ListActivity {
             intent.putExtra(NOMEFIGURA, valorNome);
             intent.putExtra(NOMEFIGURAENG, valorNomeEng);
             intent.putExtra(MenuActivity.PLANO, plano);
+            intent.putExtra(IDFIGURA, idFigura);
             startActivity(intent);
         }
         else if (valorNome.equals("Cubo")){
@@ -155,6 +156,7 @@ public class ListFiguras extends ListActivity {
             intent.putExtra(NOMEFIGURA, valorNome);
             intent.putExtra(NOMEFIGURAENG, valorNomeEng);
             intent.putExtra(MenuActivity.PLANO, plano);
+            intent.putExtra(IDFIGURA, idFigura);
             startActivity(intent);
         }
         else if (valorNome.equals("Esfera")){
@@ -162,6 +164,7 @@ public class ListFiguras extends ListActivity {
             intent.putExtra(NOMEFIGURA, valorNome);
             intent.putExtra(NOMEFIGURAENG, valorNomeEng);
             intent.putExtra(MenuActivity.PLANO, plano);
+            intent.putExtra(IDFIGURA, idFigura);
             startActivity(intent);
         }
         else if (valorNome.equals("Triangulo")){
@@ -169,6 +172,7 @@ public class ListFiguras extends ListActivity {
             intent.putExtra(NOMEFIGURA, valorNome);
             intent.putExtra(NOMEFIGURAENG, valorNomeEng);
             intent.putExtra(MenuActivity.PLANO, plano);
+            intent.putExtra(IDFIGURA, idFigura);
             startActivity(intent);
         }
         else if(valorNome.equals("Retangulo")){
@@ -176,6 +180,7 @@ public class ListFiguras extends ListActivity {
             intent.putExtra(NOMEFIGURA, valorNome);
             intent.putExtra(NOMEFIGURAENG, valorNomeEng);
             intent.putExtra(MenuActivity.PLANO, plano);
+            intent.putExtra(IDFIGURA, idFigura);
             startActivity(intent);
         }
         else if(valorNome.equals("Prisma triangular")){
@@ -183,6 +188,7 @@ public class ListFiguras extends ListActivity {
             intent.putExtra(NOMEFIGURA, valorNome);
             intent.putExtra(NOMEFIGURAENG, valorNomeEng);
             intent.putExtra(MenuActivity.PLANO, plano);
+            intent.putExtra(IDFIGURA, idFigura);
             startActivity(intent);
         }
         else if(valorNome.equals("Prisma retangular")){
@@ -190,6 +196,7 @@ public class ListFiguras extends ListActivity {
             intent.putExtra(NOMEFIGURA, valorNome);
             intent.putExtra(NOMEFIGURAENG, valorNomeEng);
             intent.putExtra(MenuActivity.PLANO, plano);
+            intent.putExtra(IDFIGURA, idFigura);
             startActivity(intent);
         }
     }
