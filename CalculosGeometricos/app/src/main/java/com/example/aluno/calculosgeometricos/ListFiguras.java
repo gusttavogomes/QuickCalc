@@ -24,7 +24,6 @@ public class ListFiguras extends ListActivity {
     private String plano;
     private String valorNome;
     private String valorNomeEng;
-    private int v1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
