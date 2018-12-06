@@ -30,4 +30,5 @@
     <string name="altura_do_prisma">"Prism Height "</string>
     <string name="comprimento">"Length of Prism "</string>
     <string name="salvar">Save</string>
+    <string name="erroCalcular">"WAS NOT POSSIBLE TO CALCULATE: Invalid or uninitialized fields - Review as information entered in the fields"</string>
 </resources>

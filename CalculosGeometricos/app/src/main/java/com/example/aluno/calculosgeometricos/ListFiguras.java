@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 
 public class ListFiguras extends ListActivity {
-    public static final String NOMEFIGURA = "com.example.aluno.calculosgeometricos.NOMEFIGURA" ;
+    public static final String NOMEFIGURA = "com.example.aluno.calculosgeometricos.NOMEFIGURA";
     public static final String NOMEFIGURAENG = "com.example.aluno.calculosgeometricos.NOMEFIGURAENG";
     public static final String IDFIGURA = "com.example.aluno.calculosgeometricos.IDFIGURA";
     private SQLiteDatabase db;

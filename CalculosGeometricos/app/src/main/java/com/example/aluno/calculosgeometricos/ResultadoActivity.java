@@ -13,12 +13,15 @@ import android.widget.Toast;
 import static com.example.aluno.calculosgeometricos.CalculoDataBaseHelper.insertHistorico;
 
 public class ResultadoActivity extends Activity {
+
     private String nomeOperacao;
     private String resultadoPerimetro;
     private String resultadoVolume;
     private String resultadoArea;
     private int idFigura;
     private SQLiteDatabase db;
+    private String nomeFigura;
+    private String plano;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +34,6 @@ public class ResultadoActivity extends Activity {
 
         String idiomaBase = "Idioma";
         String idiomaUtilizado = getString(R.string.idioma);
-
-        String plano;
-        String nomeFigura;
 
         if(idiomaBase.equals(idiomaUtilizado)){
             plano = getIntent().getStringExtra(MenuActivity.PLANO);
@@ -91,6 +91,24 @@ public class ResultadoActivity extends Activity {
             Toast toast = Toast.makeText(this, "DB indisponível", Toast.LENGTH_LONG);
             toast.show();
         }
+        startActivity(intent);
+    }
+
+    public void enviarSMS(View view) {
+        String msg;
+
+        if(resultadoPerimetro == null){
+            msg ="Nome da operação: " + nomeOperacao + "\nnome da figura: " + nomeFigura + "\ntipo da figura: " + plano + "\nresultado da área: " + resultadoArea + "\nresultado do volume: " + resultadoVolume;
+        }
+        else{
+            msg ="Nome da operação: " + nomeOperacao + "\nnome da figura: " + nomeFigura + "\ntipo da figura: " + plano + "\nresultado da área: " + resultadoArea + "\nresultado do perimetro: " + resultadoPerimetro;
+        }
+
+        Intent intent = new Intent();
+        intent.setAction(android.content.Intent.ACTION_SEND);
+        intent.putExtra(Intent.EXTRA_TEXT, msg);
+
+        intent.setType("text/plain");
         startActivity(intent);
     }
 }

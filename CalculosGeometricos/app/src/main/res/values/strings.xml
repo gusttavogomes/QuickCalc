@@ -30,4 +30,5 @@
     <string name="altura_do_prisma">Altura do Prisma</string>
     <string name="comprimento">Comprimento do Prisma</string>
     <string name="salvar">Salvar</string>
+    <string name="erroCalcular">"NÃO FOI POSSIVEL CALCULAR: Campos invalidos ou não inseridos. Revise as informações inseridas nos campos."</string>
 </resources>

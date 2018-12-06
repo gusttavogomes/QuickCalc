@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class UmCampoActivity extends Activity {
 
@@ -55,49 +56,54 @@ public class UmCampoActivity extends Activity {
         String nomeOperacao = editTextNomeOperacao.getText().toString();
         String plano = getIntent().getStringExtra(MenuActivity.PLANO);
 
-        Double v1 = Double.parseDouble(lado1);
-        Double area;
-        Double perimetro;
-        Double volume;
+        try{
+            Double v1 = Double.parseDouble(lado1);
+            Double area;
+            Double perimetro;
+            Double volume;
+            if(nomeFigura.equals("Quadrado")){
+                area = Math.pow(v1,2);
+                perimetro = v1 * 4;
 
-        if(nomeFigura.equals("Quadrado")){
-            area = Math.pow(v1,2);
-            perimetro = v1 * 4;
+                resultadoArea = area.toString();
+                resultadoPerimetro = perimetro.toString();
+            }
+            else if(nomeFigura.equals("Circulo")){
+                area = Math.pow(v1,2) * 3.1415926;
+                perimetro = 2 * 3.1415926 * v1;
 
-            resultadoArea = area.toString();
-            resultadoPerimetro = perimetro.toString();
+                resultadoArea = area.toString();
+                resultadoPerimetro = perimetro.toString();
+            }
+            else if(nomeFigura.equals("Cubo")){
+                area = 6 * Math.pow(v1,2);
+                volume = Math.pow(v1,3);
+
+                resultadoArea = area.toString();
+                resultadoVolume = volume.toString();
+            }
+            else if(nomeFigura.equals("Esfera")){
+                area = 4 * 3.1415926 * Math.pow(v1,2);
+                volume = (4 * 3.1415926 * Math.pow(v1,3)) / 3;
+
+                resultadoArea = area.toString();
+                resultadoVolume = volume.toString();
+            }
+
+            intent.putExtra(NOMEOPERACAO, nomeOperacao);
+            intent.putExtra(MenuActivity.PLANO, plano);
+            intent.putExtra(ListFiguras.NOMEFIGURA, nomeFigura);
+            intent.putExtra(ListFiguras.NOMEFIGURAENG, nomeFiguraEng);
+            intent.putExtra(ListFiguras.IDFIGURA, idFigura);
+            intent.putExtra(RESULTADOPERIMETRO, resultadoPerimetro);
+            intent.putExtra(RESULTADOVOLUME, resultadoVolume);
+            intent.putExtra(RESULTADOAREA, resultadoArea);
+
+            startActivity(intent);
+        }catch (Exception ex){
+            Toast toast = Toast.makeText(this, R.string.erroCalcular, Toast.LENGTH_LONG);
+            toast.show();
+
         }
-        else if(nomeFigura.equals("Circulo")){
-            area = Math.pow(v1,2) * 3.1415926;
-            perimetro = 2 * 3.1415926 * v1;
-
-            resultadoArea = area.toString();
-            resultadoPerimetro = perimetro.toString();
-        }
-        else if(nomeFigura.equals("Cubo")){
-            area = 6 * Math.pow(v1,2);
-            volume = Math.pow(v1,3);
-
-            resultadoArea = area.toString();
-            resultadoVolume = volume.toString();
-        }
-        else if(nomeFigura.equals("Esfera")){
-            area = 4 * 3.1415926 * Math.pow(v1,2);
-            volume = (4 * 3.1415926 * Math.pow(v1,3)) / 3;
-
-            resultadoArea = area.toString();
-            resultadoVolume = volume.toString();
-        }
-
-        intent.putExtra(NOMEOPERACAO, nomeOperacao);
-        intent.putExtra(MenuActivity.PLANO, plano);
-        intent.putExtra(ListFiguras.NOMEFIGURA, nomeFigura);
-        intent.putExtra(ListFiguras.NOMEFIGURAENG, nomeFiguraEng);
-        intent.putExtra(ListFiguras.IDFIGURA, idFigura);
-        intent.putExtra(RESULTADOPERIMETRO, resultadoPerimetro);
-        intent.putExtra(RESULTADOVOLUME, resultadoVolume);
-        intent.putExtra(RESULTADOAREA, resultadoArea);
-
-        startActivity(intent);
     }
 }

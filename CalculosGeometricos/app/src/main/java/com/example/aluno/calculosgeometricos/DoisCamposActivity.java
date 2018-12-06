@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class DoisCamposActivity extends Activity {
 
@@ -45,54 +46,57 @@ public class DoisCamposActivity extends Activity {
         String nomeOperacao = editTextNomeOperacao.getText().toString();
         String plano = getIntent().getStringExtra(MenuActivity.PLANO);
 
-        Double v1 = Double.parseDouble(campo1);
-        Double v2 = Double.parseDouble(campo2);
-        Double area;
-        Double v3;
-        Double perimetro;
+        try{
+            Double v1 = Double.parseDouble(campo1);
+            Double v2 = Double.parseDouble(campo2);
+            Double area;
+            Double v3;
+            Double perimetro;
+            if (nomeFigura.equals("Triangulo")){
+                if(tipoTriangulo.equals("Retangulo")){
+                    area = (v1 * v2) / 2;
+                    v3 = Math.sqrt(Math.pow(v1, 2) + Math.pow(v2, 2));
+                    perimetro = v1 + v2 + v3;
 
-        if (nomeFigura.equals("Triangulo")){
+                    resultadoArea = area.toString();
+                    resultadoPerimetro = perimetro.toString();
+                }
+                else if(tipoTriangulo.equals("Isosceles")){
+                    area = (v1 * v2) / 2;
+                    v3 = Math.sqrt(Math.pow(v1, 2) + Math.pow(v2, 2));
+                    perimetro = 2 * v3 + v1;
 
-            if(tipoTriangulo.equals("Retangulo")){
-                area = (v1 * v2) / 2;
-                v3 = Math.sqrt(Math.pow(v1, 2) + Math.pow(v2, 2));
-                perimetro = v1 + v2 + v3;
+                    resultadoArea = area.toString();
+                    resultadoPerimetro = perimetro.toString();
+                }
+                else if(tipoTriangulo.equals("Equilatero")){
+                    area = (v1 * v2) / 2;
+                    perimetro = 3 * v1;
+
+                    resultadoArea = area.toString();
+                    resultadoPerimetro = perimetro.toString();
+                }
+            }
+            else if(nomeFigura.equals("Retangulo")){
+                area = v1 * v2 ;
+                perimetro = 2 * (v1 + v2) ;
 
                 resultadoArea = area.toString();
                 resultadoPerimetro = perimetro.toString();
             }
-            else if(tipoTriangulo.equals("Isosceles")){
-                area = (v1 * v2) / 2;
-                v3 = Math.sqrt(Math.pow(v1, 2) + Math.pow(v2, 2));
-                perimetro = 2 * v3 + v1;
 
-                resultadoArea = area.toString();
-                resultadoPerimetro = perimetro.toString();
-            }
-            else if(tipoTriangulo.equals("Equilatero")){
-                area = (v1 * v2) / 2;
-                perimetro = 3 * v1;
+            intent.putExtra(NOMEOPERACAO, nomeOperacao);
+            intent.putExtra(MenuActivity.PLANO, plano);
+            intent.putExtra(ListFiguras.NOMEFIGURA, nomeFigura);
+            intent.putExtra(ListFiguras.NOMEFIGURAENG, nomeFiguraEng);
+            intent.putExtra(ListFiguras.IDFIGURA, idFigura);
+            intent.putExtra(RESULTADOPERIMETRO, resultadoPerimetro);
+            intent.putExtra(RESULTADOAREA, resultadoArea);
 
-                resultadoArea = area.toString();
-                resultadoPerimetro = perimetro.toString();
-            }
+            startActivity(intent);
+        }catch (Exception ex){
+            Toast toast = Toast.makeText(this, R.string.erroCalcular, Toast.LENGTH_LONG);
+            toast.show();
         }
-        else if(nomeFigura.equals("Retangulo")){
-            area = v1 * v2 ;
-            perimetro = 2 * (v1 + v2) ;
-
-            resultadoArea = area.toString();
-            resultadoPerimetro = perimetro.toString();
-        }
-
-        intent.putExtra(NOMEOPERACAO, nomeOperacao);
-        intent.putExtra(MenuActivity.PLANO, plano);
-        intent.putExtra(ListFiguras.NOMEFIGURA, nomeFigura);
-        intent.putExtra(ListFiguras.NOMEFIGURAENG, nomeFiguraEng);
-        intent.putExtra(ListFiguras.IDFIGURA, idFigura);
-        intent.putExtra(RESULTADOPERIMETRO, resultadoPerimetro);
-        intent.putExtra(RESULTADOAREA, resultadoArea);
-
-        startActivity(intent);
     }
 }

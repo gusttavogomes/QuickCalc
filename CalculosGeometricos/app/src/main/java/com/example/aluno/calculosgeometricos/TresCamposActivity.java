@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class TresCamposActivity extends Activity {
     public static final String RESULTADOAREA = "com.example.aluno.calculosgeometricos.RESULTADOAREA";
@@ -50,40 +51,46 @@ public class TresCamposActivity extends Activity {
         String nomeOperacao = editTextNomeOperacao.getText().toString();
         String plano = getIntent().getStringExtra(MenuActivity.PLANO);
 
-        Double v1 = Double.parseDouble(campo1);
-        Double v2 = Double.parseDouble(campo2);
-        Double v3 = Double.parseDouble(campo3);
-        Double areaBase;
-        Double volume;
-        Double areaTotal;
+        try{
 
-        if(nomeFigura.equals("Prisma retangular")){
-            areaBase = (v1 * v2);
-            volume = areaBase * v3;
+            Double v1 = Double.parseDouble(campo1);
+            Double v2 = Double.parseDouble(campo2);
+            Double v3 = Double.parseDouble(campo3);
+            Double areaBase;
+            Double volume;
+            Double areaTotal;
 
-            areaTotal = 2 * v1 * (v2 + (2 * v3));
+            if(nomeFigura.equals("Prisma retangular")){
+                areaBase = (v1 * v2);
+                volume = areaBase * v3;
 
-            resultadoVolume = volume.toString();
-            resultadoArea = areaTotal.toString();
+                areaTotal = 2 * v1 * (v2 + (2 * v3));
+
+                resultadoVolume = volume.toString();
+                resultadoArea = areaTotal.toString();
+            }
+            else if(nomeFigura.equals("Prisma triangular")){
+                areaBase = (v1 * v2) / 2;
+                volume = areaBase * v3;
+
+                areaTotal = v1 * (v2 + (3 * v3));
+
+                resultadoVolume = volume.toString();
+                resultadoArea = areaTotal.toString();
+            }
+
+            intent.putExtra(NOMEOPERACAO, nomeOperacao);
+            intent.putExtra(MenuActivity.PLANO, plano);
+            intent.putExtra(ListFiguras.NOMEFIGURA, nomeFigura);
+            intent.putExtra(ListFiguras.NOMEFIGURAENG, nomeFiguraEng);
+            intent.putExtra(ListFiguras.IDFIGURA, idFigura);
+            intent.putExtra(RESULTADOVOLUME, resultadoVolume);
+            intent.putExtra(RESULTADOAREA, resultadoArea);
+
+            startActivity(intent);
+        }catch (Exception ex){
+            Toast toast = Toast.makeText(this, R.string.erroCalcular, Toast.LENGTH_LONG);
+            toast.show();
         }
-        else if(nomeFigura.equals("Prisma Triangular")){
-            areaBase = (v1 *v2) / 2;
-            volume = areaBase * v3;
-
-            areaTotal = v1 * (v2 + (3 * v3));
-
-            resultadoVolume = volume.toString();
-            resultadoArea = areaTotal.toString();
-        }
-
-        intent.putExtra(NOMEOPERACAO, nomeOperacao);
-        intent.putExtra(MenuActivity.PLANO, plano);
-        intent.putExtra(ListFiguras.NOMEFIGURA, nomeFigura);
-        intent.putExtra(ListFiguras.NOMEFIGURAENG, nomeFiguraEng);
-        intent.putExtra(ListFiguras.IDFIGURA, idFigura);
-        intent.putExtra(RESULTADOVOLUME, resultadoVolume);
-        intent.putExtra(RESULTADOAREA, resultadoArea);
-
-        startActivity(intent);
     }
 }
